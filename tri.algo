@@ -1,0 +1,19 @@
+ALGORITHM tri_insertion(tab)
+VAR
+    i j :INTEGER;
+    tab:ARRAY_OF INTEGER[N];
+BEGIN
+    for i from 1 To N
+    // L'élément à insérer est tab[i].
+    // Les éléments déjà triés sont tab[0:i-1].
+
+    j = i - 1;
+    WHILE (j >= 0 ET tab[i] < tab[j]) DO
+      // On décale les éléments plus grands que tab[i] vers la droite.
+      tab[j + 1] = tab[j];
+      j -= 1;
+
+    // On insère tab[i] à sa place.
+    tab[j + 1] = tab[i];
+     END_WHILE
+END
